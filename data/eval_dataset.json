@@ -1,0 +1,32 @@
+[
+  {
+    "id": "EVAL-01",
+    "ticket": "Storage blob endpoint returning 403 ServerFailedToAuthenticate across all West Europe services.",
+    "expected_category": "Cloud Infrastructure",
+    "expected_priority": "P1-Critical"
+  },
+  {
+    "id": "EVAL-02",
+    "ticket": "How do we configure a custom domain and SSL binding for our staging App Service?",
+    "expected_category": "Application",
+    "expected_priority": "P4-Low"
+  },
+  {
+    "id": "EVAL-03",
+    "ticket": "Multiple failed Kerberos ticket attempts from untrusted subnet targeting Active Directory DC-01.",
+    "expected_category": "Security",
+    "expected_priority": "P2-High"
+  },
+  {
+    "id": "EVAL-04",
+    "ticket": "Asymmetric routing detected on ExpressRoute primary gateway leading to packet drops over 40%.",
+    "expected_category": "Networking",
+    "expected_priority": "P1-Critical"
+  },
+  {
+    "id": "EVAL-05",
+    "ticket": "NodeJS runtime memory leak crashing backend container pod every 4 hours under heavy load.",
+    "expected_category": "Application",
+    "expected_priority": "P2-High"
+  }
+]

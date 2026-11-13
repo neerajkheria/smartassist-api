@@ -1,0 +1,7 @@
+$schema: https://azuremlschemas.azureedge.net/latest/workspace.schema.json
+name: proj-smartassist
+location: eastus2
+display_name: SmartAssist AI Project
+description: AI Foundry Project for SmartAssist AI
+kind: project
+hub_id: /subscriptions/370b90b3-9b62-4532-84cc-8efd785be9d3/resourceGroups/rg-smartassist-prod/providers/Microsoft.MachineLearningServices/workspaces/hub-smartassist

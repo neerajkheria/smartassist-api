@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartassist-api-deployment
+  namespace: default
+  labels:
+    app: smartassist-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: smartassist-api
+  template:
+    metadata:
+      labels:
+        app: smartassist-api
+    spec:
+      containers:
+      - name: smartassist-api
+        image: smartassist-api:v1.0.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        env:
+        - name: ENVIRONMENT
+          value: "kubernetes-production"
+        resources:
+          requests: #Default resource allocation
+            memory: "128Mi" 
+            cpu: "100m" #1Mi = 0.1vCPU --> 0.1 vCPU
+          limits: #max resource consumption limit
+            memory: "256Mi"
+            cpu: "300m"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 8000
+          initialDelaySeconds: 3
+          periodSeconds: 5
